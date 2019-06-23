@@ -3,7 +3,7 @@ body {
     padding: 50px;
 }
 h1 {
-    size: 40px;
+    size: 60px;
     color: orange;
     text-align: center;
 }
@@ -14,6 +14,10 @@ h1 {
     text-align: left;
     height: 60vh;
     width: 83vw;
+    size: 40px;
+}
+.timer {
+    text-align: center;
 }
 footer{
     position: absolute;
