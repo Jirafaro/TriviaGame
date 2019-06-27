@@ -6,7 +6,7 @@ let questions = [
        choiceB: "Green",
        choiceC: "Red",
        choiceD: "Orange",
-       correct: "Orange"
+       correct: "Orange",
    },
    {
        question: "What is the most common favorite color?",
@@ -86,8 +86,26 @@ $("#A").on('click', function(){
       win();
    } else {
       loss();
-   }})
+}})
 
+$("#B").on('click', function(){
+   if (questions[runningQuestionIndex].choiceB===questions[runningQuestionIndex].correct){
+      win();
+   } else {
+      loss();
+}})
+$("#C").on('click', function(){
+    if (questions[runningQuestionIndex].choiceC===questions[runningQuestionIndex].correct){
+      win();
+   } else {
+      loss();
+}})
+$("#D").on('click', function(){
+   if (questions[runningQuestionIndex].choiceD===questions[runningQuestionIndex].correct){
+     win();
+  } else {
+     loss();
+}})
 
 
    
