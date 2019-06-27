@@ -50,7 +50,7 @@ function delayedalert(){
 }
 
 function intervaltime (){
-   setTimeout (renderQuestion, 5000);
+   setTimeout (renderQuestion, 2000);
 }
 
 function win() {
@@ -106,6 +106,8 @@ $("#D").on('click', function(){
   } else {
      loss();
 }})
+
+
 
 
    
