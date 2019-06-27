@@ -13,10 +13,10 @@ h1 {
     padding: 100px;
     text-align: left;
     height: 60vh;
-    width: 83vw;
+    width: 85%;
     size: 40px;
 }
-.timer {
+.choice {
     text-align: center;
 }
 footer{
