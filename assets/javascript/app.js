@@ -14,7 +14,15 @@ let questions = [
        choiceB: "Green",
        choiceC: "Red",
        choiceD: "Orange",
-       correct: "Blue"
+       correct: "Blue",
+   },
+   {
+       question: "What is Mac's Favorite Color?",
+       choiceA: "The color of an applied mathmatics degree burning to keep you warm at night",
+       choiceB: "The color of Zack's face when Brian Calls him Chipmunk",
+       choiceC: "The color of Austins face when Mac calls him out for these dastardly choices",
+       choiceD: "Why not All of the Above ?",
+       correct: "Why not All of the Above ?"
    }
 ]
 
@@ -23,6 +31,13 @@ let runningQuestionIndex = 0;
 let score = 0;
 let wrongscore = 0;
 let timer = 20;
+
+   $('#start').on('click', function(){
+      console.log('hi');
+      renderQuestion();  
+      delayedalert();
+})
+
 
 function renderQuestion(){
    let q = questions[runningQuestionIndex];
@@ -33,6 +48,7 @@ function renderQuestion(){
    $('#D').html(q.choiceD).show();
    $('#new').hide();
    timer=20;
+   time();
 }
 
 function time(){
@@ -40,7 +56,6 @@ function time(){
    $('.timer').html(timer);
    if(timer===0) {
    wrongscore ++;
-   timer=20;
    runningQuestionIndex ++;
    renderQuestion();
 }}
@@ -77,10 +92,6 @@ function loss() {
       $('#new').html('That is Not Correct!').show();
 }
 
-renderQuestion();
-delayedalert();
-
-
 $("#A").on('click', function(){
    if (questions[runningQuestionIndex].choiceA===questions[runningQuestionIndex].correct){
       win();
@@ -106,9 +117,3 @@ $("#D").on('click', function(){
   } else {
      loss();
 }})
-
-
-
-
-   
-
