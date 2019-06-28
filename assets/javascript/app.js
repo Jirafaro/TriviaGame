@@ -32,6 +32,8 @@ let score = 0;
 let wrongscore = 0;
 let timer = 20;
 
+
+
    $('#start').on('click', function(){
       console.log('hi');
       renderQuestion();  
@@ -40,6 +42,9 @@ let timer = 20;
 
 
 function renderQuestion(){
+   if (runningQuestionIndex>questions.length) {
+      clearInterval(timeoutID);
+   } 
    let q = questions[runningQuestionIndex];
    $('#question').html(q.question).show();
    $('#A').html(q.choiceA).show();
@@ -49,7 +54,10 @@ function renderQuestion(){
    $('#new').hide();
    timer=20;
    time();
+
 }
+
+
 
 function time(){
    timer --;
@@ -70,6 +78,7 @@ function intervaltime (){
 
 function win() {
       score ++;
+      $('#wins').html('Correct: '+ score);
       runningQuestionIndex ++;
       intervaltime();
       $('#question').hide();
@@ -82,6 +91,7 @@ function win() {
 
 function loss() {
       wrongscore ++;
+      $('#losses').html('Incorrect: '+ wrongscore);
       runningQuestionIndex ++;
       intervaltime();
       $('#question').hide();
